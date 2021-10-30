@@ -1,4 +1,5 @@
 # example netlify.toml
+
 [build]
   command = "react-scripts build"
   functions = "netlify/functions"
