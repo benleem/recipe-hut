@@ -23,7 +23,7 @@ const Header = ({name}) => {
                     <Link to="/"><img src="./img/home.png" alt="" /></Link>
                     </li>
                     <li>
-                    <Link to="/edit" style={{margin: '0px 25px'}}><img src="./img/edit.png" alt="" /></Link>
+                    <Link to="/edit" style={{marginLeft:'25px'}}><img src="./img/edit.png" alt="" /></Link>
                     </li>
                 </ul>
             </nav>
