@@ -3,7 +3,7 @@
 [build]
   command = "react-scripts build"
   functions = "netlify/functions"
-  publish = "public"
+  publish = "build"
   
   [[redirects]]
     from = "/*"
