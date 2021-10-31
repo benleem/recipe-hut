@@ -1,12 +1,25 @@
 import {React, useState} from 'react'
+import axios from 'axios';
 import {
     Link
-} from "react-router-dom";
+} from "react-router-dom"; 
 
-const Header = ({name}) => {
+const Header = () => {
     const [isActive, setActive] = useState(false);
     const toggleClass = () => {
         setActive(!isActive);
+    };
+
+    const fetchData = async () => {
+        try {
+            console.log("Loading...")
+            const response = await axios.get('/.netlify/functions/display-posts');
+            var postData = response.data;
+            console.log(postData);
+            console.log("Data received");
+        } catch (err) {
+            console.error(err);
+        }
     };
 
     return (
@@ -19,6 +32,9 @@ const Header = ({name}) => {
                     </button>
                 </div>
                 <ul className={isActive ? "nav-list active" : "nav-list"}>
+                    <li>
+                        <button onClick={fetchData}>Test</button>
+                    </li>
                     <li >
                     <Link to="/"><img src="./img/home.png" alt="" /></Link>
                     </li>

@@ -7,20 +7,24 @@ import {
     Route
 } from "react-router-dom";
 
-function App() {
-  return (
+const App = () =>{
+    return(
     <div className="App">
         <Router>
             <div>
                 <Header/>
                 <Switch>
-                    <Route path="/" component={Home}exact/>
-                    <Route path="/edit" component={Edit}/>
+                    <Route path="/" exact>
+                        <Home account='test'/>
+                    </Route>
+                    <Route path="/edit" exact>
+                        <Edit/>
+                    </Route>
                 </Switch>
             </div>
         </Router>
     </div>
-  );
+    );
 }
 
 export default App;

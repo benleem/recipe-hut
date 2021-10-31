@@ -1,10 +1,11 @@
 import React from 'react'
 import Posts from '../components/Posts'
 
-const Home = () => {
+const Home = ({account}) => {
     return (
         <section className='home'>
-            <p>This is the home page XD</p>
+            <p>This is the home page</p>
+            <p>{account}</p>
             <Posts/>
         </section>
     )
