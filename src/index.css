@@ -35,6 +35,10 @@ header{
   display: inline-block;
 }
 
+.nav-list li:last-child{
+  padding-left: 25px;
+}
+
 /* Toggle button animation */
 
 .toggle-btn {
@@ -109,6 +113,10 @@ header{
 
   .nav-list li{
     margin-bottom: 10px;
+  }
+
+  .nav-list li:last-child{
+    padding-left: 0px;
   }
 
   .toggle-btn{
