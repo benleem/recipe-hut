@@ -14,7 +14,7 @@ const Header = () => {
         try {
             console.log("Loading...")
             const response = await axios.get('/.netlify/functions/display-posts');
-            var postData = response.data;
+            var postData = await response.data;
             console.log(postData);
             console.log("Data received");
         } catch (err) {
