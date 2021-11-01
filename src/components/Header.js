@@ -13,6 +13,11 @@ const Header = () => {
         window.netlifyIdentity.open();
     }
 
+    const functionBundle = () =>{
+        toggleClass();
+        ntlIdentity();
+    }
+
     return (
         <header>
             <nav className='navbar'>
@@ -30,7 +35,7 @@ const Header = () => {
                         <Link to="/edit"><img src="./img/edit.png" alt="" onClick={toggleClass}/></Link>
                     </li>
                     <li style={{paddingRight:'0px'}}>
-                        <button onClick={toggleClass && ntlIdentity}><img src="./img/user.png" alt=""/></button>
+                        <button onClick={functionBundle}><img src="./img/user.png" alt=""/></button>
                     </li>
                 </ul>
             </nav>
