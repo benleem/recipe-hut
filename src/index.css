@@ -20,8 +20,6 @@ header{
 }
 
 .nav-list{
-  /* height: 100vh;
-  max-width: 0; */
   display: flex;
   align-items: center;
   list-style-type: none;
@@ -57,7 +55,7 @@ header{
   height: 21px;
   cursor: pointer;
   background:none;
-  z-index: 100;
+  z-index: 98;
 }
 
 .bar{
@@ -67,13 +65,13 @@ header{
   border-radius: 10px;
   transition: all .5s ease-in-out;
   border-radius: 10px;
-  z-index: 99;
+  z-index: 98;
 }
 
 .bar::before, .bar::after{
   content: '';
   display: block;
-  z-index: 99;
+  z-index: 98;
   width: 100%;
   height: 3px;
   background-color: #fff;
@@ -99,6 +97,11 @@ header{
 }
 .toggle-btn.active .bar::after {
   transform: rotate(-45deg) translate(37px, 33px);
+}
+
+@media screen and (max-width: 480px){
+  
+
 }
 
 @media screen and (max-width: 600px){
