@@ -13,7 +13,7 @@ const Home = () => {
         } catch (err) {
             console.error(err);
         }
-    };
+    }
 
     return (
         <section className='home'>

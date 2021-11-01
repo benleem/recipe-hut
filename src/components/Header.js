@@ -7,7 +7,11 @@ const Header = () => {
     const [isActive, setActive] = useState(false);
     const toggleClass = () => {
         setActive(!isActive);
-    };
+    }
+
+    const ntlIdentity = () => {
+        window.netlifyIdentity.open();
+    }
 
     return (
         <header>
@@ -19,11 +23,14 @@ const Header = () => {
                     </button>
                 </div>
                 <ul className={isActive ? "nav-list active" : "nav-list"}>
-                    <li >
-                    <Link to="/"><img src="./img/home.png" alt="" onClick={toggleClass}/></Link>
+                    <li style={{paddingLeft:'0px'}}>
+                        <Link to="/"><img src="./img/home.png" alt="" onClick={toggleClass}/></Link>
                     </li>
                     <li>
-                    <Link to="/edit"><img src="./img/edit.png" alt="" onClick={toggleClass}/></Link>
+                        <Link to="/edit"><img src="./img/edit.png" alt="" onClick={toggleClass}/></Link>
+                    </li>
+                    <li style={{paddingRight:'0px'}}>
+                        <button onClick={toggleClass && ntlIdentity}><img src="./img/user.png" alt=""/></button>
                     </li>
                 </ul>
             </nav>

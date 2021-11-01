@@ -31,12 +31,19 @@ header{
   max-width: 30px;
 }
 
+.nav-list button{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 .nav-list li{
   display: inline-block;
+  padding:0 10px;
 }
 
 .nav-list li:last-child{
-  padding-left: 25px;
+  border-left: 3px solid white;
 }
 
 /* Toggle button animation */
@@ -108,15 +115,16 @@ header{
 
   .nav-list.active{
     flex-direction: column;
-    max-height: 88px;
+    max-height: 132px;
   }
 
   .nav-list li{
     margin-bottom: 10px;
+    padding: 0px;
   }
 
   .nav-list li:last-child{
-    padding-left: 0px;
+    border-left: none;
   }
 
   .toggle-btn{
