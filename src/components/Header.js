@@ -2,6 +2,7 @@ import {React, useState} from 'react'
 import {
     Link
 } from "react-router-dom"; 
+import netlifyIdentity from 'netlify-identity-widget';
 
 const Header = () => {
     const [isActive, setActive] = useState(false);
@@ -10,9 +11,9 @@ const Header = () => {
     }
 
     const ntlIdentity = () => {
-        window.netlifyIdentity.open();
+        netlifyIdentity.open();
     }
-
+    
     const functionBundle = () =>{
         toggleClass();
         ntlIdentity();

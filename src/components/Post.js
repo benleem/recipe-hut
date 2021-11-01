@@ -1,15 +1,16 @@
 import React from 'react'
 
-const Post = () => {
+const Post = ({post}) => {
+    console.log(post)
     return (
         <div className='post'>
-            <p>Post 1</p>
-            <p>hhello</p>
-            <p>hello</p>
+            <h2>{post.title}</h2>
+            <h3>Ingredients</h3>
+            <p>{post.ingredients}</p>
+            <h3>Description</h3>
+            <p className='description'>{post.description}</p>
         </div>
     )
 }
 
 export default Post 
-
-

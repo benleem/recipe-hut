@@ -41,7 +41,7 @@ header{
 }
 
 .nav-list li:last-child{
-  border-left: 3px solid white;
+  border-left: 2px solid white;
 }
 
 /* Toggle button animation */
@@ -97,6 +97,16 @@ header{
 }
 .toggle-btn.active .bar::after {
   transform: rotate(-45deg) translate(37px, 33px);
+}
+
+/* Post */
+
+.post{
+  padding: 10px 0;
+}
+
+.post .description{
+  white-space: pre-wrap;
 }
 
 @media screen and (max-width: 480px){
