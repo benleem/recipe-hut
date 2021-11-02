@@ -200,6 +200,7 @@ header{
 }
 
 .fork button{
+  background-color: white;
   border:none;
   height: 200px;
   width: 200px;
