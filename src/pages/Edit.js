@@ -49,7 +49,7 @@ const Edit= ({user}) => {
                     <Form/>
                 </div>
                 <div className={postsView ? "content active" : "content"}>
-                    <p style={{textAlign:'center'}}>{user.email}</p>
+                    <p style={{textAlign:'center'}}>User email: {user.email}</p>
                     <Posts/>
                 </div>
             </section>
