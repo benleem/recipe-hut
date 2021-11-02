@@ -11,9 +11,9 @@ const Form = () => {
                         <div className="ingredient-container">
                             <input type="text" placeholder="Ingredients" id="input-ingredients"/>
                             <div className="controls">
-                                <a className="add-ingredient">
+                                <div className="add-ingredient">
                                     <span className="ingredient-bar"></span>
-                                </a>
+                                </div>
                             </div>
                         </div>
                         <div className="show-ingredients"></div>
