@@ -1,10 +1,10 @@
 import React from 'react'
 import Posts from '../components/Posts'
 
-const Home = () => {
+const Home = ({user}) => {
     return (
-        <div>
-            <Posts/>
+        <div id='wrapper'>
+            <Posts user={user}/>
         </div>
     )
 }
