@@ -30,6 +30,8 @@ font-family: 'Noto Sans Mono', monospace; */
 
 header{
   color: grey;
+  position: sticky;
+  top: 0;
 }
 
 .navbar{
