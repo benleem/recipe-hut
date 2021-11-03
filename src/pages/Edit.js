@@ -4,32 +4,15 @@ import Form from '../components/Form';
 
 const Edit= ({user}) => {
     const [isActive, setActive] = useState(false);
-    const [formView, setFormView] = useState(false);
-    const [postsView, setPostsView] = useState(false);
 
-    const toggleForm = () => {
-        setFormView(!formView);
-        setPostsView(false);
-    }
-    const togglePosts = () => {
-        setPostsView(!postsView);
-        setFormView(false);
-    }
-
-    const postsBundler = () => {
+    const toggleClass = () => {
         setActive(!isActive);
-        togglePosts();
-    }
-
-    const formBundler = () => {
-        setActive(!isActive);
-        toggleForm();
     }
 
     // console.log(user)
     if (user === null) {
         return (
-            <div>
+            <div className='no-user'>
                 <p>Please login to view this page!</p>
             </div>
         )
@@ -37,21 +20,13 @@ const Edit= ({user}) => {
     else{
         return (
             <section className='edit'>
-                <div className={isActive ? "fork active" : "fork"}>
-                    <div className='add'>
-                        <button onClick={formBundler} >Add a recipe</button>
-                    </div>
-                    <div className='edit'>
-                        <button onClick={postsBundler}>Edit/Delete recipes</button>
-                    </div>
+                <div className={isActive ? "form" : "form active"}>
+                    <Form user={user}/> 
                 </div>
-                <div className={formView ? "form active" : "form"}>
-                    <Form/>
+                <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                    <button className={isActive ? "show-btn active" : "show-btn"} onClick={toggleClass}><span className='bar'></span></button>
                 </div>
-                <div className={postsView ? "content active" : "content"}>
-                    <p style={{textAlign:'center'}}>User email: {user.email}</p>
-                    <Posts/>
-                </div>
+                <Posts/>
             </section>
         )
     }   
