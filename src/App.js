@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 import {
     BrowserRouter as Router,
     Switch,
@@ -12,12 +13,29 @@ import Edit from './pages/Edit'
 
 const App = () =>{
     const [user, setUser] = useState(null);
+    const [posts, setPost] = useState([]);
+
+    const fetchData = async () => {
+        try {
+            console.log("Loading...")
+            const response = await axios.get('/.netlify/functions/display-posts');
+            var postInfo = await response.data.data;
+            setPost(postInfo);
+            console.log("Data received");
+        } catch (err) {
+            console.error(err);
+        }
+    }
     
     useEffect(() =>{
         netlifyIdentity.on('login', user => setUser(user));
         netlifyIdentity.on('logout', () => setUser(null));
         setUser(netlifyIdentity.currentUser());
     },[user]);
+
+    useEffect(() => {
+        fetchData();
+    },[])
 
     return(
         <div className="App">
@@ -26,10 +44,10 @@ const App = () =>{
                     <Header/>
                     <Switch>
                         <Route path="/" exact>
-                            <Home user={user}/>
+                            <Home posts={posts} user={user}/>
                         </Route>
                         <Route path="/edit" exact>
-                            <Edit user={user}/>
+                            <Edit posts={posts} user={user}/>
                         </Route>
                     </Switch>
                 </div>

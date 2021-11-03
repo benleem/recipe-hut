@@ -2,14 +2,13 @@ import React, { useState} from 'react'
 import Posts from '../components/Posts'
 import Form from '../components/Form';
 
-const Edit= ({user}) => {
+const Edit= ({posts, user}) => {
     const [isActive, setActive] = useState(false);
-
+    
     const toggleClass = () => {
         setActive(!isActive);
     }
 
-    // console.log(user)
     if (user === null) {
         return (
             <div className='no-user'>
@@ -26,7 +25,7 @@ const Edit= ({user}) => {
                 <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                     <button className={isActive ? "show-btn active" : "show-btn"} onClick={toggleClass}><span className='bar'></span></button>
                 </div>
-                <Posts/>
+                <Posts posts={posts.filter(post => post.data.postInfo.userId === user.id)}/>
             </section>
         )
     }   

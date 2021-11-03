@@ -78,6 +78,7 @@ header{
 }
 
 .post{
+  display: flex;
   margin: auto;
   padding: 10px 0;
   border-bottom: 1px solid saddlebrown;
@@ -96,6 +97,18 @@ header{
 
 .post .description{
   white-space: pre-wrap;
+}
+
+.post img{
+  width: 250px;
+  padding: 10px 0;
+  padding-right: 20px;
+}
+
+.img-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -259,6 +272,18 @@ header{
 
 
 /* Media queries */
+
+@media screen and (max-width: 600px){
+  .post{
+    flex-direction: column;
+  }
+  .post img{
+    padding-right: 0px;
+    padding-top: 0px;
+    width: 300px;
+    max-width: 100%;
+  }
+}
 
 @media screen and (max-width: 800px){
   .navbar{

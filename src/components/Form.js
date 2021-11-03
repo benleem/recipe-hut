@@ -20,10 +20,11 @@ const Form = ({user}) => {
         try {
             await axios.post('/.netlify/functions/addpost', {
                 username: user.user_metadata.full_name,
+                userId: user.id,
                 title: form.title.value,
                 ingredients: ingredients,
                 description: form.description.value,
-                url: form.url.value
+                imgUrl: form.url.value
             });
         } catch (err) {
             console.error(err);
