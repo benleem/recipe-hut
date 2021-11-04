@@ -38,7 +38,7 @@ const Form = ({user}) => {
                     <input type="text" name='title' placeholder="What's cookin?" required/>
                     <div className="ingredient-wrapper">
                         <div className="ingredient-container">
-                            <input type="text" placeholder="Ingredients" id="input-ingredients" onInput={e => saveInput(e.target.value)} required/>
+                            <input type="text" placeholder="Ingredients" id="input-ingredients" onInput={e => saveInput(e.target.value)} required={ingredients.length ? false : true}/>
                             <div className="controls">
                                 <div className="add-ingredient" onClick={addIngredient}>
                                     <span className="ingredient-bar"></span>
