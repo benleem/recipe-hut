@@ -2,7 +2,7 @@ import React, { useState} from 'react'
 import Posts from '../components/Posts'
 import Form from '../components/Form';
 
-const Edit= ({posts, user}) => {
+const Edit= ({fetchData, posts, user}) => {
     const [isActive, setActive] = useState(false);
     
     const toggleClass = () => {
@@ -16,18 +16,35 @@ const Edit= ({posts, user}) => {
             </div>
         )
     }   
+
     else{
-        return (
-            <section className='edit'>
-                <div className={isActive ? "form" : "form active"}>
-                    <Form user={user}/> 
-                </div>
-                <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-                    <button className={isActive ? "show-btn active" : "show-btn"} onClick={toggleClass}><span className='bar'></span></button>
-                </div>
-                <Posts posts={posts.filter(post => post.data.postInfo.userId === user.id)}/>
-            </section>
-        )
+        const filteredPosts = posts.filter(post => post.data.postInfo.userId === user.id);
+        if (filteredPosts.length !== 0) {
+            return (
+                <section className='edit'>
+                    <div className={isActive ? "form" : "form active"}>
+                        <Form user={user}/> 
+                    </div>
+                    <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <button className={isActive ? "show-btn active" : "show-btn"} onClick={toggleClass}><span className='bar'></span></button>
+                    </div>
+                    <Posts fetchData={fetchData} posts={posts.filter(post => post.data.postInfo.userId === user.id)}/>
+                </section>
+            )
+        }
+        else{
+            return(
+                <section className='edit'>
+                    <div className={isActive ? "form" : "form active"}>
+                        <Form user={user}/> 
+                    </div>
+                    <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <button className={isActive ? "show-btn active" : "show-btn"} onClick={toggleClass}><span className='bar'></span></button>
+                    </div>
+                    <h1 className='no-posts'>This user has no posts</h1>
+                </section>
+            )
+        }
     }   
 }
 

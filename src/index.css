@@ -8,22 +8,32 @@ font-family: 'Noto Sans Mono', monospace; */
   border-spacing: 0;   
 }
 
+.home .delete-post{
+  display: none;
+}
+
 /* No-user*/
 
 .no-user{
+  padding-top: 50px;
   width: 100vw;
-  height: 93vh;
-  background-color: #dd7230;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family:'Bebas Neue', cursive;
 }
 
 .no-user p{
   font-size: 40px;
   font-weight: 600;
   text-align: center;
+}
+
+.no-posts{
+  font-size: 40px;
+  padding-top: 50px;
+  text-align: center;
+  font-family:'Bebas Neue', cursive;
 }
 
 /* Header */
@@ -41,6 +51,7 @@ header{
   background-color: #dd7230;
   padding: 0 10px;
   height: 100%;
+  z-index: 98;
 }
 
 .nav-list{
@@ -81,11 +92,20 @@ header{
 
 .post{
   display: flex;
+  width: 800px;
   margin: auto;
   padding: 10px 0;
   border-bottom: 1px solid saddlebrown;
-  max-width: 800px;
+  max-width: 100%;
   font-family: 'Noto Sans Mono', monospace;
+}
+
+.post div:nth-child(2){
+  width: 100%;
+}
+
+.post:last-child{
+  margin-bottom: 10px;
 }
 
 .post h2,.post h3{
@@ -125,7 +145,6 @@ header{
   height: 100%;
   margin: auto;
   display: flex;
-  position: relative;
 }
 
 .form.active{
@@ -272,6 +291,20 @@ header{
 
 /* Edit Page */
 
+.edit .delete-post{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+
+}
+.edit .delete-post button{
+  background-color: red;
+  padding: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
 
 /* Media queries */
 

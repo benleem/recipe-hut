@@ -3,13 +3,12 @@ import axios from "axios";
 import {
     BrowserRouter as Router,
     Switch,
-    Route
+    Route,
 } from "react-router-dom";
 import netlifyIdentity from 'netlify-identity-widget';
 import Header from './components/Header'
 import Home from './pages/Home'
 import Edit from './pages/Edit'
-
 
 const App = () =>{
     const [user, setUser] = useState(null);
@@ -47,7 +46,7 @@ const App = () =>{
                             <Home posts={posts} user={user}/>
                         </Route>
                         <Route path="/edit" exact>
-                            <Edit posts={posts} user={user}/>
+                            <Edit fetchData={fetchData} posts={posts} user={user}/>
                         </Route>
                     </Switch>
                 </div>
