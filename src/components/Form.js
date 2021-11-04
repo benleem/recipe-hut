@@ -2,7 +2,7 @@ import React, { useState} from 'react'
 import axios from 'axios';
 import Ingredient from './Ingredient'
 
-const Form = ({user}) => {
+const Form = ({fetchData, user}) => {
     const [ingredients, setIngredients] = useState([]);
     const [input, setInput] = useState("");
 
@@ -29,6 +29,7 @@ const Form = ({user}) => {
         } catch (err) {
             console.error(err);
         } 
+        fetchData();
     }
 
     return (
@@ -51,7 +52,7 @@ const Form = ({user}) => {
                     </div>
                 </div>
                 <textarea placeholder="Description/Intructions" name="description" id="input-description" cols="30" rows="10" style={{paddingTop:'10px', minHeight:'40px'}} required></textarea>
-                <input placeholder='Picture url' type="text" name="url" id="url" required/>
+                <input placeholder='Picture url' type="url" name="url" id="url" required/>
                 <button className='submit' type='submit'>Submit recipe!</button>
             </form>
         </section>

@@ -123,8 +123,8 @@ header{
 
 .post img{
   width: 250px;
-  padding: 10px 0;
   padding-right: 20px;
+  display: inline-block;
 }
 
 .img-container{
@@ -315,6 +315,7 @@ header{
   .post img{
     padding-right: 0px;
     padding-top: 0px;
+    padding: 0px 0px 10px 0px;
     width: 300px;
     max-width: 100%;
   }

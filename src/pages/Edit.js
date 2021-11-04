@@ -16,10 +16,9 @@ const Edit= ({fetchData, posts, user}) => {
             </div>
         )
     }   
-
     else{
         const filteredPosts = posts.filter(post => post.data.postInfo.userId === user.id);
-        if (filteredPosts.length !== 0) {
+        if (filteredPosts.length > 0) {
             return (
                 <section className='edit'>
                     <div className={isActive ? "form" : "form active"}>
@@ -36,7 +35,7 @@ const Edit= ({fetchData, posts, user}) => {
             return(
                 <section className='edit'>
                     <div className={isActive ? "form" : "form active"}>
-                        <Form user={user}/> 
+                        <Form fetchData={fetchData} user={user}/> 
                     </div>
                     <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                         <button className={isActive ? "show-btn active" : "show-btn"} onClick={toggleClass}><span className='bar'></span></button>
