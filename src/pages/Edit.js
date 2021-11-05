@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 import Posts from '../components/Posts'
 import Form from '../components/Form';
 
@@ -25,7 +25,9 @@ const Edit= ({fetchData, posts, user}) => {
                         <Form user={user}/> 
                     </div>
                     <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-                        <button className={isActive ? "show-btn active" : "show-btn"} onClick={toggleClass}><span className='bar'></span></button>
+                        <button className={isActive ? "show-btn active" : "show-btn"} onClick={toggleClass}>
+                            <span className='bar'></span>
+                        </button>
                     </div>
                     <Posts fetchData={fetchData} posts={posts.filter(post => post.data.postInfo.userId === user.id)}/>
                 </section>

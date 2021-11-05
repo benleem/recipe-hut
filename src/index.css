@@ -51,7 +51,7 @@ header{
   background-color: #dd7230;
   padding: 0 10px;
   height: 100%;
-  z-index: 98;
+  z-index: 100;
 }
 
 .nav-list{
@@ -155,16 +155,15 @@ header{
   width: 40px;
   height: 40px;
   margin-top: 10px;
-  border: 2px solid black;
+  border: 2px solid #dd7230;
   border-radius: 50%;
   outline: none;
   cursor: pointer;
-  background-color: white;
+  background-color: rgb(0, 0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all .5s ease-in-out;
-  z-index: -1;
 }
 
 .show-btn.active{
@@ -172,7 +171,7 @@ header{
 }
 
 .show-btn .bar{
-  background-color: black;
+  background-color: #dd7230;
   height: 3px;
   width: 20px;
 }
@@ -180,7 +179,7 @@ header{
 .show-btn .bar::before{
   content: '';
   display: block;
-  background-color: black;
+  background-color: #dd7230;
   height: 3px;
   width: 20px;
   transform: rotate(90deg);
@@ -217,7 +216,7 @@ header{
 }
 
 .form-container textarea{
-  height: 100px;
+  height: 200px;
   max-height: 100%;
 }
 
