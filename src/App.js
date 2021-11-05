@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import {
-    BrowserRouter as Router,
     Switch,
-    Route,
+    Route
 } from "react-router-dom";
 import netlifyIdentity from 'netlify-identity-widget';
 import Header from './components/Header'
@@ -16,11 +15,9 @@ const App = () =>{
 
     const fetchData = async () => {
         try {
-            console.log("Loading...")
             const response = await axios.get('/.netlify/functions/display-posts');
             var postInfo = await response.data.data;
             setPost(postInfo);
-            console.log("Data received");
         } catch (err) {
             console.error(err);
         }
@@ -37,20 +34,16 @@ const App = () =>{
     },[])
 
     return(
-        <div className="App">
-            <Router>
-                <div>
-                    <Header/>
-                    <Switch>
-                        <Route path="/" exact>
-                            <Home posts={posts} user={user}/>
-                        </Route>
-                        <Route path="/edit" exact>
-                            <Edit fetchData={fetchData} posts={posts} user={user}/>
-                        </Route>
-                    </Switch>
-                </div>
-            </Router>
+        <div className='App'>
+            <Header/>
+            <Switch>
+                <Route path="/" exact>
+                    <Home posts={posts} user={user}/>
+                </Route>
+                <Route path="/edit" exact>
+                    <Edit fetchData={fetchData} posts={posts} user={user}/>
+                </Route>
+            </Switch>
         </div>
     )
 }

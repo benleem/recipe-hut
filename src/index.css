@@ -164,6 +164,7 @@ header{
   justify-content: center;
   align-items: center;
   transition: all .5s ease-in-out;
+  z-index: -1;
 }
 
 .show-btn.active{
@@ -171,7 +172,6 @@ header{
 }
 
 .show-btn .bar{
-  display: block;
   background-color: black;
   height: 3px;
   width: 20px;
