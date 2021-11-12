@@ -15,7 +15,7 @@ const Header = () => {
                 <Link to='/'><img src="./img/logo.png" alt="" style={{maxWidth: '50px', marginTop:'5px'}}/></Link>
                 <ul className='nav-list'>
                     <li style={{paddingLeft:'0px'}}>
-                        <Link to="/"><img src="./img/home.png" alt=""/></Link>
+                        <Link to="/home"><img src="./img/home.png" alt=""/></Link>
                     </li>
                     <li>
                         <Link to="/edit"><img src="./img/edit.png" alt=""/></Link>

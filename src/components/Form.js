@@ -52,7 +52,7 @@ const Form = ({fetchData, user}) => {
                     </div>
                 </div>
                 <textarea placeholder="Description/Intructions" name="description" id="input-description" cols="30" rows="10" style={{paddingTop:'10px', minHeight:'40px'}} required></textarea>
-                <input placeholder='Picture url(optional)' type="url" name="url" id="url"/>
+                <input placeholder='Youtube video(optional)' type="url" name="url" id="url"/>
                 <button className='submit' type='submit'>Submit recipe!</button>
             </form>
         </section>

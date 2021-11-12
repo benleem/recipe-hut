@@ -8,6 +8,7 @@ import netlifyIdentity from 'netlify-identity-widget';
 import Header from './components/Header'
 import Home from './pages/Home'
 import Edit from './pages/Edit'
+import Landing from "./pages/Landing";
 
 const App = () =>{
     const [user, setUser] = useState(null);
@@ -35,12 +36,16 @@ const App = () =>{
 
     return(
         <div className='App'>
-            <Header/>
             <Switch>
                 <Route path="/" exact>
+                    <Landing/>
+                </Route>
+                <Route path="/home" exact>
+                    <Header/>
                     <Home posts={posts} user={user}/>
                 </Route>
                 <Route path="/edit" exact>
+                    <Header/>
                     <Edit fetchData={fetchData} posts={posts} user={user}/>
                 </Route>
             </Switch>
