@@ -1,8 +1,9 @@
-import React, { useState} from 'react'
+import React, { useState, useEffect} from 'react'
 
 const Recent = () => {
-    const [index, setIndex] = useState(0)
-    var images = [
+    const [index, setIndex] = useState(0);
+
+    let images = [
         {
             testUrl:'./img/placeholder.jpeg',
         },
@@ -26,7 +27,7 @@ const Recent = () => {
         }
         else{
             setIndex(index + 1);
-        } 
+        }
     }
 
     const handlePrev = () =>{
@@ -35,8 +36,14 @@ const Recent = () => {
         }
         else{
             setIndex(index - 1);
-        } 
+        }
     }
+    // useEffect(() => {
+    //     console.log('New slide view:')
+    //     console.log(previousIndex);
+    //     console.log(index);
+    //     console.log(nextIndex);
+    // }, [index])
     
     return (
         <div className='recent-posts'>
