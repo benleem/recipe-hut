@@ -475,6 +475,12 @@ header{
 
 
 /* Media queries */
+@media screen and (max-width: 400px){
+  .offers ul li{
+    flex-direction: column;
+  }  
+}
+
 
 @media screen and (max-width: 600px){
   .post{
