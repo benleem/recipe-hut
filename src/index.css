@@ -482,7 +482,6 @@ header{
   }   
 }
 
-
 @media screen and (max-width: 600px){
   .post{
     flex-direction: column;
@@ -513,7 +512,7 @@ header{
 @media screen and (max-width: 950px){
   .banner{
     flex-direction: column-reverse;
-    padding: 100px 3%;
+    padding: 50px 3%;
   }
 
   .recent-posts{
