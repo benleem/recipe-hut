@@ -1,10 +1,10 @@
 import React from 'react'
 import Post from './Post'
 
-const Posts = ({fetchData, posts}) => {
+const Posts = ({fetchData, posts, loading}) => {
     return (
         <div className='posts'>
-            {posts.length ? posts.map(post => <Post fetchData={fetchData} key={post.ref["@ref"].id} post={post}/>).reverse() : "Loading..."}
+            {loading ? "Loading..." : posts.map(post => <Post fetchData={fetchData} key={post.ref["@ref"].id} post={post}/>).reverse()}
         </div>
     )
 }

@@ -13,7 +13,7 @@ const Landing = () => {
             <Transition/>
             <Recent/>
             <Transition/>
-            <div className='picture-gallery' style={{height:'800px'}}>
+            <div className='picture-gallery'>
                 <p>Image grid</p>
             </div>
         </section>

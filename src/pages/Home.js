@@ -1,10 +1,10 @@
 import React from 'react'
 import Posts from '../components/Posts'
 
-const Home = ({posts}) => {
+const Home = ({posts, loading}) => {
     return (
         <div className='home'>
-            <Posts posts={posts}/>
+            <Posts loading={loading} posts={posts}/>
         </div>
     )
 }

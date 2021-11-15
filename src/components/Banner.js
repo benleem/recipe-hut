@@ -13,7 +13,7 @@ const Banner = () => {
                 <Link to="/home">Enter the Hut</Link>
             </div>
             <div className='img'>
-                <img src="./img/pizza.png" alt=""/>
+                <img src="./img/placeholder.jpeg" alt=""/>
             </div>
         </div>
     )
