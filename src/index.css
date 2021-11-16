@@ -29,6 +29,16 @@ p{
   background-image: -webkit-linear-gradient(-60deg, white 50% , #dd7230  50% );
 }
 
+.loading{
+  text-align:center;
+  height:100vh; 
+  width:100vw;
+  position:fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* No-user*/
 
 .no-user{
