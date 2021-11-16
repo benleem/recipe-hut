@@ -10,7 +10,7 @@ const override = css`
 const Loading = () => {
     return (
         <div className='loading'>
-            <ClipLoader loading={true} color='#dd7230' size={200} css={override}/>
+            <ClipLoader loading={true} color='#dd7230' size={150} css={override}/>
         </div>
     )
 }
