@@ -1,10 +1,21 @@
 import React from 'react'
 import axios from 'axios'
+import { useLocation } from 'react-router'
 
-const Post = ({fetchData, post}) => {
-    const deletePost = async (form) =>{
+const Post = ({ setEditObject, setEditId, setActive, setEditMode, fetchData, post}) => {
+    const location = useLocation();
+
+    const editPost = () =>{
+        setEditObject(post.data.postInfo);
+        setEditId(post.ref["@ref"].id);
+        window.scrollTo(0, 0);
+        setEditMode(true);
+        setActive(true);
+    }
+    
+    const deletePost = async () =>{
         try {
-            await axios.delete('/.netlify/functions/deletepost', {
+            await axios.delete('/.netlify/functions/delete', {
                 data:{
                     id: post.ref["@ref"].id
                 }
@@ -27,9 +38,12 @@ const Post = ({fetchData, post}) => {
                 <p>{post.data.postInfo.ingredients.map((ingredient, index) => ((index ? ', ': '') + ingredient))}</p>
                 <h3>Description</h3>
                 <p className='description'>{post.data.postInfo.description}</p>
-                <div className='delete-post'>
-                    <button onClick={deletePost}>Delete</button>
-                </div>
+                {location.pathname === "/edit" ?
+                    <div className='edit-section'>
+                        <button className='edit-post' onClick={editPost}>Edit</button>
+                        <button className='delete-post' onClick={deletePost}>Delete</button>
+                    </div> : null
+                }
             </div>
         </div>
     )

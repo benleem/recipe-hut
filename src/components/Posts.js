@@ -2,10 +2,17 @@ import React from 'react'
 import Post from './Post'
 import Loading from './Loading'
 
-const Posts = ({fetchData, posts, loading}) => {
+const Posts = ({ setEditObject, setEditId,setActive, setEditMode, search, fetchData, posts, loading}) => {
     return (
         <div className='posts'>
-            {loading ? <Loading/> : posts.map(post => <Post fetchData={fetchData} key={post.ref["@ref"].id} post={post}/>).reverse()}
+            {loading ? <Loading/> : 
+                posts.filter((post) => {
+                    return (
+                        post.data.postInfo.username.toLowerCase().includes(search) ||
+                        post.data.postInfo.title.toLowerCase().includes(search)
+                    )
+                }).map((post) => <Post setEditObject={setEditObject} setEditId={setEditId} setActive={setActive} setEditMode={setEditMode} fetchData={fetchData} key={post.ref["@ref"].id} post={post}/>).reverse()
+            }
         </div>
     )
 }

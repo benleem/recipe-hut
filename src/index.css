@@ -79,6 +79,13 @@ header{
   list-style-type: none;
 }
 
+.nav-list input{
+  height: 35px;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 10px;
+  border: none;
+}
+
 .nav-list img{
   max-width: 30px;
 }
@@ -87,6 +94,10 @@ header{
   background: none;
   border: none;
   cursor: pointer;
+}
+
+button.search-button{
+  background-color: white;
 }
 
 .nav-list li{
@@ -305,27 +316,46 @@ header{
   width: 20px;
 }
 
-/* Home Page */
-
-.home .delete-post{
-  display: none;
-}
-
 /* Edit Page */
 
-.edit .delete-post{
+.edit-section{
   display: flex;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
 
 }
-.edit .delete-post button{
+
+.edit-post{
+  background-color: grey;
+  padding: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border: 2px solid grey;
+  transition: all .3s ease-in-out;
+  margin-left: 10px;
+}
+
+.delete-post{
   background-color: red;
   padding: 10px;
   border: none;
   color: white;
   cursor: pointer;
+  border: 2px solid red;
+  transition: all .3s ease-in-out;
+  margin-left: 10px;
+}
+
+.edit-post:hover{
+  background-color:white;
+  color: grey;
+}
+
+.delete-post:hover{
+  background-color:white;
+  color: red;
 }
 
 /* Landing Page */
@@ -471,6 +501,7 @@ header{
   justify-content: center;
   align-items: center;
   height: 300px;
+  transition: all .5s ease-in-out;
 }
 
 .slide img{
