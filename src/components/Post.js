@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { useLocation } from 'react-router'
 
-const Post = ({ setEditObject, setEditId, setActive, setEditMode, fetchData, post}) => {
+const Post = ({ setLoading, setEditObject, setEditId, setActive, setEditMode, fetchData, post}) => {
     const location = useLocation();
 
     const editPost = () =>{
@@ -14,7 +14,10 @@ const Post = ({ setEditObject, setEditId, setActive, setEditMode, fetchData, pos
     }
     
     const deletePost = async () =>{
+        setEditMode(false);
         try {
+            setLoading(true);
+            await axios.post('/.netlify/functions/cloudinary_delete', {data: post.data.postInfo.imgId});
             await axios.delete('/.netlify/functions/delete', {
                 data:{
                     id: post.ref["@ref"].id

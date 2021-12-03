@@ -55,7 +55,7 @@ const App = () =>{
                     <Home search={search} loading={loading} posts={posts} user={user}/>
                 </Route>
                 <Route path="/edit" exact>
-                    <Edit search={search} loading={loading} fetchData={fetchData} posts={posts} user={user}/>
+                    <Edit search={search} setLoading={setLoading} loading={loading} fetchData={fetchData} posts={posts} user={user}/>
                 </Route>
             </Switch>
         </div>

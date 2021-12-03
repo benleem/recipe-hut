@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Ingredient = ({ingredient, ingredients, setIngredients}) => {
+const Ingredient = ({ id, ingredient, ingredients, setIngredients}) => {
     const deleteIngredient=()=>{
-        setIngredients(ingredients.filter(item => item !== ingredient));
+        setIngredients(ingredients.filter((item, index) => index !== id));
     }
 
     return (

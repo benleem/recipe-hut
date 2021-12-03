@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Posts from '../components/Posts'
 import Form from '../components/Form';
 
-const Edit= ({search, fetchData, posts, user, loading}) => {
+const Edit= ({search, fetchData, posts, user, setLoading, loading}) => {
     const [isActive, setActive] = useState(false);
     const [editMode, setEditMode] = useState(false);
     const [editId, setEditId] = useState("");
@@ -24,15 +24,15 @@ const Edit= ({search, fetchData, posts, user, loading}) => {
         return (
             <section className='edit'>
                 <div className={isActive ? "form" : "form active"}>
-                    <Form editObject={editObject} editId={editId} editMode={editMode} setEditMode={setEditMode} fetchData={fetchData} user={user} posts={posts}/> 
+                    <Form setLoading={setLoading} isActive={isActive} setActive={setActive} editObject={editObject} editId={editId} editMode={editMode} setEditMode={setEditMode} fetchData={fetchData} user={user} posts={posts}/> 
                 </div>
-                <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-                    <button className={isActive ? "show-btn active" : "show-btn"} onClick={toggleClass}>
-                        <span className='bar'></span>
-                    </button>
-                </div>
-                <p>{editMode}</p>
-                {(filteredPosts.length === 0 && loading === false) ? <h1 className='no-posts'>This user has no posts</h1> :  <Posts setEditObject={setEditObject} setEditId={setEditId} setActive={setActive} setEditMode={setEditMode} search={search} loading={loading} fetchData={fetchData} posts={filteredPosts}/>}
+                {loading ? null 
+                :  <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <button className={isActive ? "show-btn active" : "show-btn"} onClick={toggleClass}>
+                            <span className='bar'></span>
+                        </button>
+                    </div>}
+                {(filteredPosts.length === 0 && loading === false) ? <h1 className='no-posts'>This user has no posts</h1> :  <Posts setEditObject={setEditObject} setEditId={setEditId} setActive={setActive} setEditMode={setEditMode} search={search} setLoading={setLoading} loading={loading} fetchData={fetchData} posts={filteredPosts}/>}
             </section>
         )
     }   
