@@ -1,5 +1,4 @@
 const { requestObj, responseObj } = require('./util/helper');
-require('dotenv').config();
 var cloudinary = require('cloudinary').v2;
 cloudinary.config({ 
     cloud_name: process.env.CLOUD_NAME, 
