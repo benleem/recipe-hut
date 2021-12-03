@@ -1,9 +1,10 @@
 const { requestObj, responseObj } = require('./util/helper');
+require('dotenv').config();
 var cloudinary = require('cloudinary').v2;
 cloudinary.config({ 
-    cloud_name: 'recipe-hut', 
-    api_key: '981896117984596', 
-    api_secret: '8uE-iRUMSnJvt1JGG_b0csOuN8Q',
+    cloud_name: process.env.CLOUD_NAME, 
+    api_key: process.env.CLOUD_KEY, 
+    api_secret: process.env.CLOUD_SECRET,
     secure: true
 });
 
