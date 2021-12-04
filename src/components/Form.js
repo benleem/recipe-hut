@@ -2,6 +2,8 @@ import React, { useRef, useState, useEffect} from 'react'
 import axios from 'axios';
 import Ingredient from './Ingredient'
 
+require('dotenv').config()
+
 const Form = ({ resetForm, setLoading, isActive, setActive, editObject, editId, setEditMode, editMode, fetchData, user}) => {
     const [ingredients, setIngredients] = useState([]);
     const [input, setInput] = useState("");
@@ -26,11 +28,11 @@ const Form = ({ resetForm, setLoading, isActive, setActive, editObject, editId, 
         setActive(false);
         const data = new FormData();
         data.append('file', imageSelect);
-        data.append('upload_preset', 'eyiorin6');
+        data.append('upload_preset', process.env.REACT_APP_CLOUD_PRESET);
         try {
             if (editImage === true || editMode === false) {
                 setLoading(true);
-                const response = await axios.post('https://api.cloudinary.com/v1_1/recipe-hut/image/upload', data)
+                const response = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`, data)
                 const file = response.data;
                 callback(file, e.target); 
             }
@@ -43,7 +45,7 @@ const Form = ({ resetForm, setLoading, isActive, setActive, editObject, editId, 
         } catch (err) {
             console.error(err);
         }  
-        setEditImage(false)
+        setEditImage(false);
     }
 
     const addPost = async (image, form) =>{

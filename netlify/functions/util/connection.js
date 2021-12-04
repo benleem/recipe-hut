@@ -1,4 +1,5 @@
 const faunadb = require('faunadb');
+require('dotenv').config()
 const q = faunadb.query;
 SECRET_KEY = process.env.SECRET_KEY;
 
