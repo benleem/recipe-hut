@@ -2,8 +2,6 @@ import React, { useRef, useState, useEffect} from 'react'
 import axios from 'axios';
 import Ingredient from './Ingredient'
 
-require('dotenv').config()
-
 const Form = ({ resetForm, setLoading, isActive, setActive, editObject, editId, setEditMode, editMode, fetchData, user}) => {
     const [ingredients, setIngredients] = useState([]);
     const [input, setInput] = useState("");
