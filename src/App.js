@@ -49,7 +49,7 @@ const App = () =>{
             <Header setSearch={setSearch} posts={posts} location={location}/>
             <Switch>
                 <Route path="/" exact>
-                    <Landing/>
+                    <Landing posts={posts}/>
                 </Route>
                 <Route path="/home" exact>
                     <Home search={search} loading={loading} posts={posts} user={user}/>

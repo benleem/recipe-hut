@@ -4,14 +4,14 @@ import Offers from '../components/Offers'
 import Recent from '../components/Recent'
 import Transition from '../components/Transition'
 
-const Landing = () => {
+const Landing = ({posts}) => {
     return (
         <section className='landing-page'>
             <Banner/>
             <Transition/>
             <Offers/>
             <Transition/>
-            <Recent/>
+            <Recent posts={posts}/>
             <Transition/>
             <div className='picture-gallery'>
                 <p>Image grid</p>

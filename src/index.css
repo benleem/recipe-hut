@@ -451,6 +451,7 @@ input.file-input{
 
 .offers img{
   width: 150px;
+  max-width: 100%;
   height: 150px;
   display: inline-block;
   filter: invert(73%) sepia(74%) saturate(4119%) hue-rotate(339deg) brightness(90%) contrast(91%);
@@ -491,61 +492,38 @@ input.file-input{
 
   /* Recent Posts */
 
-.recent-posts{
-  color: white;
-}
-
-.recent-posts{
+.glide-wrapper{
+  width: 100vw;
   background-color: #dd7230;
-  padding: 50px 0;
 }
 
-.carousel{
-  position: relative;
+button.glide__arrow{
+  background-color: #f4c95d;
+  color: black;
+}
+
+button.glide__arrow:hover{
+  border: 2px solid #dd7230;
+}
+
+.glide{
+  padding:50px 0;
+  background-color: #dd7230;
   max-width: 950px;
-  width: 100%;
   margin: auto;
 }
 
-.controller{
-  color: black;
-  border: none;
-  padding: 10px;
-  text-align: center;
-  cursor: pointer;
-  background-color: #f4c95d;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: all .3s ease-in-out;
-}
-
-.controller:hover{
-  background-color: white;
-}
-
-.controller.next{
-  right: 0;
-}
-
-.carousel-content{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.slide{
+.glide__slide{
+  background-color: antiquewhite;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 300px;
-  transition: all .5s ease-in-out;
+  height: 100%;
 }
 
-.slide img{
-  display: block;
-  height: 100%;
+.glide__slide img{
+  max-width: 300px;
   width: 100%;
 }
 
@@ -607,6 +585,9 @@ input.file-input{
   .post:last-child{
     margin-bottom: 0px;
   }
+  .offers ul li{
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 490px){
@@ -646,6 +627,10 @@ input.file-input{
   .banner{
     flex-direction: column-reverse;
     padding: 50px 3%;
+  }
+
+  .glide{
+    padding:50px 3%;
   }
 
   .recent-posts{

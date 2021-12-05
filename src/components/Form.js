@@ -29,6 +29,9 @@ const Form = ({ resetForm, setLoading, isActive, setActive, editObject, editId, 
         data.append('upload_preset', process.env.REACT_APP_CLOUD_PRESET);
         try {
             if (editImage === true || editMode === false) {
+                if (editMode === true) {
+                    await axios.post('/.netlify/functions/cloudinary_delete', {data: editObject.imgId});
+                }
                 setLoading(true);
                 const response = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`, data)
                 const file = response.data;
@@ -92,8 +95,7 @@ const Form = ({ resetForm, setLoading, isActive, setActive, editObject, editId, 
         if (editMode === true) {
             setIngredients(editObject.ingredients);   
         }
-
-        if (editMode === false){
+        else if(editMode === false){
             setActive(false);
             setIngredients([]);
             form.current.reset();
