@@ -451,7 +451,6 @@ input.file-input{
 
 .offers img{
   width: 150px;
-  max-width: 100%;
   height: 150px;
   display: inline-block;
   filter: invert(73%) sepia(74%) saturate(4119%) hue-rotate(339deg) brightness(90%) contrast(91%);
