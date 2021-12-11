@@ -22,9 +22,9 @@ const sliderConfiguration= {
 
 const Recent = ({posts}) => {
     useEffect(() => {
-        // console.log(posts);
+        console.log(posts[0]);
         new Glide('.glide', sliderConfiguration).mount();
-    }, [])
+    }, [posts])
 
     return (
         <div className='glide-wrapper'>
@@ -32,23 +32,23 @@ const Recent = ({posts}) => {
                 <div className="glide__track" data-glide-el="track">
                     <ul className="glide__slides">
                         <li className="glide__slide">
-                            <img src='./img/add.svg' alt="" />
+                            <img src='./img/placeholder.jpeg' alt="" />
                             <p>0</p>   
                         </li>
                         <li className="glide__slide">
-                            <img src='./img/add.svg' alt="" />
+                            <img src='./img/placeholder2.jpeg' alt="" />
                             <p>1</p>   
                         </li>
                         <li className="glide__slide">
-                            <img src='./img/add.svg' alt="" />
+                            <img src='./img/placeholder3.jpeg' alt="" />
                             <p>2</p>   
                         </li>
                         <li className="glide__slide">
-                            <img src='./img/add.svg' alt="" />
+                            <img src='./img/placeholder4.jpeg' alt="" />
                             <p>3</p>   
                         </li>
                         <li className="glide__slide">
-                            <img src='./img/add.svg' alt="" />
+                            <img src='./img/placeholder5.jpeg' alt="" />
                             <p>4</p>   
                         </li>
                     </ul>

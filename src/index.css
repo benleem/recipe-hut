@@ -30,11 +30,10 @@ p{
 }
 
 .loading{
-  padding-top: 10px;
+  padding-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 92vh;
 }
 
 /* No-user*/
@@ -81,11 +80,12 @@ header{
 }
 
 .navbar div {
-  height: 8vh;
+  /* height: 10vh; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 15px 0;
 }
 
 .navbar input{
@@ -550,6 +550,10 @@ button.glide__arrow:hover{
     flex-direction: column;
   }
 
+  .navbar.active{
+    height: 100vh;
+  }
+
   .navbar span{
     display: flex;
     justify-content: center;
@@ -559,18 +563,18 @@ button.glide__arrow:hover{
   .nav-list{
     display: none;
     flex-direction: column;
-    height: 92vh;
+    height: 100%;
     align-items: center;
     justify-content: center;
   }
 
   .nav-list.active{
     display: flex;
+    height: 100%;
   }
 
   .nav-list img{
     max-width: 150px;
-
   }
 
   .nav-list li{
@@ -588,12 +592,6 @@ button.glide__arrow:hover{
   .offers ul li{
     flex-direction: column;
   }
-}
-
-@media screen and (max-width: 490px){
-  /* .slide img {
-    height: 200px;
-  } */
 }
 
 @media screen and (max-width: 600px){

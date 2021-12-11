@@ -19,7 +19,6 @@ const Header = ({location, setSearch}) => {
 
     const toggleClass = () => {
         setActive(!isActive);
-        
     }
 
     useEffect(() => {
@@ -35,9 +34,9 @@ const Header = ({location, setSearch}) => {
 
     return (
         <header>
-            <nav ref={header} className='navbar'>
+            <nav ref={header} className={isActive ? 'navbar active' : 'navbar'}>
                 <div>
-                    <Link to='/'><img src="./img/logo.png" alt="" style={{maxWidth: '50px', marginTop:'5px'}}/></Link>
+                    <Link to='/'><img src="./img/logo.png" alt="" style={{maxWidth: '40px', marginTop:'5px'}}/></Link>
                     <span>
                         <input ref={input} type="text" placeholder="Search" onChange={e => saveInput(e.target.value)}/>
                         <button className='change-class' onClick={toggleClass}><img src={isActive ? './img/menu-secondary.svg' : './img/menu.svg'} alt="" /></button>
