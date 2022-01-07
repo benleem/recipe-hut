@@ -1,10 +1,10 @@
 import React from 'react'
 import Posts from '../components/Posts'
 
-const Home = ({ search, posts, loading}) => {
+const Home = ({ favorites, setFavorites, search, posts, loading}) => {
     return (
         <div className='home'>
-            <Posts search={search} loading={loading} posts={posts}/>
+            <Posts favorites={favorites} setFavorites={setFavorites} search={search} loading={loading} posts={posts}/>
         </div>
     )
 }

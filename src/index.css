@@ -106,6 +106,10 @@ header{
   max-width: 30px;
 }
 
+.nav-list li:nth-child(2) img{
+  max-width: 25px;
+}
+
 .nav-list button{
   background: none;
   border: none;
@@ -117,17 +121,18 @@ button.search-button{
 }
 
 .nav-list li{
+  padding-right: 10px;
   display: inline-block;
-  padding:0 10px;
 }
 
 .nav-list li:first-child{
-  padding-right: 0px;
-  display: flex;
+  padding-left: 10px;
 }
 
 .nav-list li:last-child{
   border-left: 2px solid white;
+  padding-right: 0px;
+  padding-left: 10px;
 }
 
 /* Post */
@@ -170,6 +175,10 @@ button.search-button{
   width: 250px;
   padding-right: 20px;
   display: inline-block;
+}
+
+.post button img{
+  padding: 0px;
 }
 
 .img-container{
@@ -362,7 +371,10 @@ input.file-input{
   justify-content: flex-end;
   align-items: center;
   width: 100%;
+}
 
+.edit-section button{
+  font-size: 16px;
 }
 
 .edit-post{
@@ -387,6 +399,15 @@ input.file-input{
   margin-left: 10px;
 }
 
+.favorite-post{
+  border:none;
+  background: none;
+}
+
+.favorite-post img{
+  width: 40px;
+}
+
 .edit-post:hover{
   background-color:white;
   color: grey;
@@ -397,135 +418,11 @@ input.file-input{
   color: red;
 }
 
-/* Landing Page */
-
-  /* Banner */
-
-.banner{
-  color: white;
-  padding: 100px 0;
-  /* height: 100vh; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #dd7230;
+.favorite-post:hover{
+  background-color:white;
+  color: #dd7230;
+  cursor: pointer;
 }
-
-.text{
-  max-width: 600px;
-}
-
-.text a{
-  text-decoration: none;
-  font-size: 25px;
-  color: black;
-  background-color: #f4c95d;
-  outline: none;
-  background-color: none;
-  display: inline-block;
-  padding: 10px;
-  transition: .3s all ease-in-out;
-}
-
-.text a:hover{
-  background-color: white;
-}
-
-.text h1 {
-  font-size:35px;
-}
-
-.text h3 {
-  padding: 30px 0;
-  font-size: 18px;
-  font-weight: 400;
-  font-family: 'Poppins', sans-serif;
-}
-
-.img img{
-  width: 350px;
-  padding-left: 20px;
-}
-
-  /* Offers */
-
-.offers img{
-  width: 150px;
-  height: 150px;
-  display: inline-block;
-  filter: invert(73%) sepia(74%) saturate(4119%) hue-rotate(339deg) brightness(90%) contrast(91%);
-}
-
-.offers ul{
-  list-style-type: none; 
-  margin: auto;
-  width: 950px;
-  max-width: 100%;
-  text-align: center;
-  padding: 50px 0;
-  background-color: white;
-
-}
-
-.offers ul li{
-  display: flex;
-  align-items: center;
-  border-bottom: 2px solid black;
-  text-align: start;
-  font-weight: 300;
-  padding: 10px 0;
-}
-
-.offers ul li h3{
-  padding-bottom: 5px;
-}
-
-.offers ul li:first-child{
-  padding-top: 0px;
-}
-
-.offers ul li:last-child{
-  border-bottom: none;
-  padding-bottom: 0px;
-}
-
-  /* Recent Posts */
-
-.glide-wrapper{
-  width: 100vw;
-  background-color: #dd7230;
-}
-
-button.glide__arrow{
-  background-color: #f4c95d;
-  color: black;
-}
-
-button.glide__arrow:hover{
-  border: 2px solid #dd7230;
-}
-
-.glide{
-  padding:50px 0;
-  background-color: #dd7230;
-  max-width: 950px;
-  margin: auto;
-}
-
-.glide__slide{
-  background-color: antiquewhite;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.glide__slide img{
-  max-width: 300px;
-  width: 100%;
-}
-
 
 /* Media queries */
 @media screen and (max-width: 400px){
@@ -576,13 +473,18 @@ button.glide__arrow:hover{
     max-width: 150px;
   }
 
+  .nav-list li:nth-child(2) img{
+    max-width: 100%;
+  }
+
   .nav-list li{
     margin: 20px 0px;
     padding: 0px;
   }
-
-  .nav-list li:last-child{
+  
+  .nav-list li:first-child, .nav-list li:last-child{
     border-left: none;
+    padding-left: 0px;
   }
 
   .post:last-child{
@@ -604,6 +506,11 @@ button.glide__arrow:hover{
     width: 300px;
     max-width: 100%;
   }
+
+  .post button img{
+    padding: 0px;
+    width: 40px;
+  }
 }
 
 @media screen and (max-width: 800px){
@@ -617,30 +524,5 @@ button.glide__arrow:hover{
 
   .posts{
     padding: 0 3%;
-  }
-}
-
-@media screen and (max-width: 950px){
-  .banner{
-    flex-direction: column-reverse;
-    padding: 50px 3%;
-  }
-
-  .glide{
-    padding:50px 3%;
-  }
-
-  .recent-posts{
-    padding: 50px 3%;
-  }
-
-  .offers ul{
-    padding: 50px 3%;
-  }
-
-  .img img{
-    max-width: 100%;
-    padding-left: 0px;
-    padding-bottom: 30px;
   }
 }

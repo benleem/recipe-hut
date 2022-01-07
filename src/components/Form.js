@@ -6,9 +6,9 @@ const Form = ({ setLoading, setActive, editObject, editId, setEditMode, editMode
     const [ingredients, setIngredients] = useState([]);
     const [input, setInput] = useState("");
     const [imageSelect, setImageSelect] = useState();
-    const [editImage, setEditImage] = useState(false)
+    const [editImage, setEditImage] = useState(false);
     const inputText = useRef();
-    const form = useRef()
+    const form = useRef();
 
     const addIngredient = () =>{
         setIngredients([...ingredients, input]);
@@ -42,7 +42,6 @@ const Form = ({ setLoading, setActive, editObject, editId, setEditMode, editMode
                 const file = null;
                 callback(file, e.target); 
             }
-            
         } catch (err) {
             console.error(err);
         }  

@@ -8,14 +8,15 @@ import {
 import netlifyIdentity from 'netlify-identity-widget';
 import Header from './components/Header';
 import Home from './pages/Home';
+import Favorites from "./pages/Favorites";
 import Edit from './pages/Edit';
-import Landing from "./pages/Landing";
 
 const App = () =>{
     const [user, setUser] = useState(null);
     const [posts, setPost] = useState([]);
     const [search, setSearch] = useState("");
     const [loading, setLoading] = useState(false);
+    const [favorites, setFavorites] = useState([]);
     const location = useLocation();
 
     const fetchData = async () => {
@@ -49,12 +50,12 @@ const App = () =>{
             <Header setSearch={setSearch} posts={posts} location={location}/>
             <Switch>
                 <Route path="/" exact>
-                    <Landing posts={posts}/>
+                    <Home search={search} favorites={favorites} setFavorites={setFavorites} loading={loading} posts={posts}/>
                 </Route>
-                <Route path="/home" exact>
-                    <Home search={search} loading={loading} posts={posts} user={user}/>
+                <Route path="/favorites">
+                    <Favorites search={search} setFavorites={setFavorites} favorites={favorites} loading={loading} posts={posts} user={user}/>
                 </Route>
-                <Route path="/edit" exact>
+                <Route path="/edit">
                     <Edit search={search} setLoading={setLoading} loading={loading} fetchData={fetchData} posts={posts} user={user}/>
                 </Route>
             </Switch>
