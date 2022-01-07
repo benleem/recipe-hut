@@ -28,11 +28,11 @@ const Post = ({ favorites, setFavorites, id, setLoading, setEditObject, setEditI
 
     const deleteFavorite = () =>{
         setFavorites(favorites.filter(favorite => favorite.favorited !== false));
-        console.log(`This post was removed from your favorites: ${id}`)
+        // console.log(`This post was removed from your favorites: ${id}`)
     }
 
     const addFavorite = async () =>{
-        console.log(`This post was added to your favorites: ${id}`)
+        // console.log(`This post was added to your favorites: ${id}`)
     }
 
     const handleFavorite = () =>{

@@ -3,9 +3,9 @@ import Post from './Post'
 import Loading from './Loading'
 
 const Posts = ({ favorites, setFavorites, setEditObject, setEditId,setActive, setEditMode, search, fetchData, posts, setLoading, loading }) => {
-    useEffect(() => {
-        console.log(favorites);
-    }, [favorites])
+    // useEffect(() => {
+    //     console.log(favorites);
+    // }, [favorites])
     return (
         <div className='posts'>
             {loading ? <Loading/> : 
