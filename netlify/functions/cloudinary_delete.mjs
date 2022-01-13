@@ -7,7 +7,6 @@ exports.handler = async (event, context) =>{
         const response = await cloudinary.uploader.destroy(body.data);
         return responseObj(200, response);
     } catch (error) {
-        console.log(error)
         return responseObj(500, error);
     }
 };

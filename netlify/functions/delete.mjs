@@ -7,7 +7,6 @@ exports.handler = async (event, context) =>{
         let deletePost= await clientQuery.query(q.Delete(q.Ref(q.Collection('posts'), body.id)));
         return responseObj(200, deletePost);
     } catch (error) {
-        console.log(error);
         return responseObj(500, error);
     }
 };

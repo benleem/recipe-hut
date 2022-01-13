@@ -11,7 +11,6 @@ exports.handler = async (event, context) => {
         )
         return responseObj(200, posts);
     } catch (error) {
-        console.log(error)
         return responseObj(500, error);
     }
 };

@@ -13,7 +13,6 @@ exports.handler = async (event, context) => {
         }));
         return responseObj(200, editPost);
     } catch (error) {
-        console.log(error)
         return responseObj(500, error);
     }
 };

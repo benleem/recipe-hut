@@ -2,16 +2,15 @@ const { responseObj } = require('./util/helper');
 const { q, clientQuery } = require('./util/connection');
 
 exports.handler = async (event, context) => {
+    const {identity, user} = context.clientContext;
     try {
-        let post = JSON.parse(event.body);
-        let postId = post.id;
-        let addFavorite= await clientQuery.query(q.Update(q.Ref(q.Collection('posts'), postId),{
+        let newUser= await clientQuery.query(q.Create(q.Collection('users'), {
             data:{
-                // postInfo
+                user
             }
         }));
-        return responseObj(200, addFavorite);
+        return responseObj(200, newUser);
     } catch (error) {
         return responseObj(500, error);
     }
-};
+}
