@@ -6,7 +6,7 @@ exports.handler = async (event, context) => {
     try {
         let newUser= await clientQuery.query(q.Create(q.Collection('users'), {
             data:{
-                identity
+                user
             }
         }));
         return responseObj(200, newUser);
