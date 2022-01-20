@@ -12,15 +12,8 @@ const Edit= ({search, fetchData, posts, user, setLoading, loading}) => {
         setActive(!isActive);
     }
 
-    if (user === null) {
-        return (
-            <div className='no-user'>
-                <p>Please login to view this page!</p>
-            </div>
-        )
-    }   
-    else{
-        const filteredPosts = posts.filter(post => post.data.postInfo.userId === user.id);
+    if (user) {
+        const filteredPosts = posts.filter(post => post.data.postInfo.userId === user.sub);
         return (
             <section className='edit'>
                 <div className={isActive ? "form" : "form active"}>
@@ -35,7 +28,14 @@ const Edit= ({search, fetchData, posts, user, setLoading, loading}) => {
                 {(filteredPosts.length === 0 && loading === false) ? <h1 className='no-posts'>This user has no posts</h1> :  <Posts setEditObject={setEditObject} setEditId={setEditId} setActive={setActive} setEditMode={setEditMode} search={search} setLoading={setLoading} loading={loading} fetchData={fetchData} posts={filteredPosts}/>}
             </section>
         )
-    }   
+    }
+    else{
+        return (
+            <div className='no-user'>
+                <p>Please login to view this page!</p>
+            </div>
+        )
+    }
 }
 
 export default Edit

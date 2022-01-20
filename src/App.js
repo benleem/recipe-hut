@@ -5,14 +5,14 @@ import {
     Route,
     useLocation
 } from "react-router-dom";
-import netlifyIdentity from 'netlify-identity-widget';
+import { useAuth0 } from "@auth0/auth0-react";
 import Header from './components/Header';
 import Home from './pages/Home';
 import Favorites from "./pages/Favorites";
 import Edit from './pages/Edit';
 
 const App = () =>{
-    const [user, setUser] = useState(null);
+    const { user } = useAuth0();
     const [posts, setPost] = useState([]);
     const [search, setSearch] = useState("");
     const [loading, setLoading] = useState(false);
@@ -34,20 +34,14 @@ const App = () =>{
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [location]);
-    
-    useEffect(() =>{
-        setUser(netlifyIdentity.currentUser());
-    },[user]);
 
     useEffect(() => {
-        netlifyIdentity.on('login', user => setUser(user));
-        netlifyIdentity.on('logout', () => setUser(null));
         fetchData();
     },[]);
 
     return(
         <div className='App'>
-            <Header setSearch={setSearch} posts={posts} location={location}/>
+            <Header setSearch={setSearch} posts={posts} location={location} user={user}/>
             <Switch>
                 <Route path="/" exact>
                     <Home search={search} favorites={favorites} setFavorites={setFavorites} loading={loading} posts={posts}/>

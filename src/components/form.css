@@ -1,0 +1,171 @@
+.form{
+  background-color: #dd7230;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+  display: flex;
+}
+
+.form.active{
+  display: none;
+}
+
+.show-btn{
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+  border: 2px solid #dd7230;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  background-color: rgb(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .5s ease-in-out;
+}
+
+.show-btn.active{
+  transform: rotate(45deg);
+}
+
+.show-btn .bar{
+  background-color: #dd7230;
+  height: 3px;
+  width: 20px;
+}
+
+.show-btn .bar::before{
+  content: '';
+  display: block;
+  background-color: #dd7230;
+  height: 3px;
+  width: 20px;
+  transform: rotate(90deg);
+}
+
+.form-wrapper{
+  background-color: #f4c95d;
+  height: fit-content;
+  border-right: 15px solid#f4c95d;
+  border-left: 15px solid#f4c95d;
+  border-top: 15px solid#f4c95d;
+  border-radius:15px;
+  width: 400px;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container input, .form-container textarea, .submit, .ingredient{
+  width: 400px;
+  max-width: 100%;
+  height: 40px;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #dd7230;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-container textarea{
+  height: 200px;
+  max-height: 100%;
+}
+
+.ingredient{
+  display: flex;
+  background-color: white;
+  align-items: center;
+}
+
+.edit-image{
+  cursor: pointer;
+  background-color: #f4c95d;
+  width: 100%;
+  border: none;
+  margin-bottom: 15px;
+  height: 45px;
+}
+
+.submit, .edit-image{
+  background: none;
+  height: fit-content;
+  border: none;
+  color: white;
+  padding: 10px 0;
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  border-radius: 15px;
+  color: black;
+  font-family: 'Bebas Neue', cursive;
+}
+
+.edit-image{
+  font-size: 15px;
+  background-color: #dd7230;
+  color: white;
+}
+
+.submit:hover{
+  background-color: #dd7230;
+  color: white;
+}
+
+.form-container input{
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-container input:last-child{
+  margin-bottom: 0px;
+}
+
+.input-text-wrapper{
+  width: 100%;
+}
+
+input.file-input{
+  padding: 0px;
+  display: inline-block;
+  height: 24px;
+  border: none;
+}
+
+/* Ingredients */
+
+.ingredient-container{
+  display: flex;
+}
+
+.add-ingredient{
+  background-color: green;
+  border: none;
+  height: 40px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.delete-ingredient{
+  background-color: red;
+  border: none;
+  height: 40px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.ingredient-bar{
+  background-color: white;
+  height: 3px;
+  width: 20px;
+}

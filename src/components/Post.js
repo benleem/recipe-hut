@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import axios from 'axios'
 import { useLocation } from 'react-router'
+import './post.css'
+
 
 const Post = ({ favorites, setFavorites, id, setLoading, setEditObject, setEditId, setActive, setEditMode, fetchData, post }) => {
     const location = useLocation();
@@ -28,11 +30,11 @@ const Post = ({ favorites, setFavorites, id, setLoading, setEditObject, setEditI
 
     const deleteFavorite = () =>{
         setFavorites(favorites.filter(favorite => favorite.favorited !== false));
-        console.log(`This post was removed from your favorites: ${id}`)
+        // console.log(`This post was removed from your favorites: ${id}`)
     }
 
     const addFavorite = async () =>{
-        console.log(`This post was added to your favorites: ${id}`)
+        // console.log(`This post was added to your favorites: ${id}`)
     }
 
     const handleFavorite = () =>{

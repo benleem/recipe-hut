@@ -2,16 +2,15 @@ import React, { useState, useRef, useEffect } from 'react';
 import {
     Link
 } from "react-router-dom"; 
-import netlifyIdentity from 'netlify-identity-widget';
+import { useAuth0 } from "@auth0/auth0-react";
+import './header.css'
 
-const Header = ({location, setSearch}) => {
+const Header = ({ user, location, setSearch }) => {
+    const { loginWithRedirect } = useAuth0();
+    const { logout } = useAuth0();
     const [isActive, setActive] = useState(false);
     const header = useRef();
     const input = useRef();
-
-    const ntlIdentity = () => {
-        netlifyIdentity.open();
-    }
 
     const saveInput = (e) => {
         setSearch(e.toLowerCase());
@@ -56,7 +55,11 @@ const Header = ({location, setSearch}) => {
                         <Link to="/edit" style={{width: '50px'}}><img src="./img/edit.svg" alt="" onClick={toggleClass}/></Link>
                     </li>
                     <li style={{paddingRight:'0px'}}>
-                        <button onClick={ntlIdentity}><img src="./img/user.svg" alt="" onClick={toggleClass}/></button>
+                        {user === undefined ? 
+                            <button className='login-btn' onClick={loginWithRedirect}><img src="./img/user.svg" alt="" onClick={toggleClass}/></button> :
+                            <img className='profile-img' src={user.picture} alt="profile" />
+                        }
+                        {user === undefined ? null : <button className='logout-btn' onClick={() => logout({ returnTo: window.location.origin })}>Logout</button>}
                     </li>
                 </ul>
             </nav>

@@ -2,7 +2,7 @@ import React, { } from 'react'
 import Posts from '../components/Posts'
 
 const Favorites = ({ favorites, setFavorites, search, posts, loading, user }) => {
-    if (user) {
+    if (user){
         const favoriteArr = favorites.map(favorite => favorite.id);
         const filteredPosts = posts.filter(post => favoriteArr.includes(post.ref["@ref"].id));
         return (

@@ -1,0 +1,159 @@
+header{
+  color: grey;
+  position: sticky;
+  top: 0;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #dd7230;
+  padding: 0 10px;
+  z-index: 100;
+}
+
+.change-class{
+  display: none;
+}
+
+.navbar div {
+  /* height: 10vh; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px 0;
+}
+
+.navbar input{
+  height: 35px;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 10px;
+  border: none;
+}
+
+.nav-list{
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  justify-content: flex-end;
+}
+
+.nav-list img{
+  max-width: 30px;
+}
+
+.nav-list li:nth-child(2) img{
+  max-width: 25px;
+}
+
+.nav-list button{
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+button.search-button{
+  background-color: white;
+}
+
+.nav-list li{
+  padding-right: 10px;
+  display: inline-block;
+}
+
+.nav-list li:first-child{
+  padding-left: 10px;
+}
+
+.nav-list li:last-child{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 2px solid white;
+  padding-right: 0px;
+  padding-left: 10px;
+}
+
+.profile-img{
+  width: 25px;
+}
+
+.logout-btn{
+  padding-top: 3px;
+}
+
+/* Media queries */
+@media screen and (max-width: 400px){
+  .change-class{
+    display: inline-block;
+    height: 40px;
+    width: 35px;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    background-color: rgb(0, 0, 0, 0);
+    color: rgb(0, 0, 0, 0);
+  }
+
+  .change-class img{
+    height: 100%;
+    width: 100%;
+  }
+
+  .navbar{
+    flex-direction: column;
+  }
+
+  .navbar.active{
+    height: 100vh;
+  }
+
+  .navbar span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-list{
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-list.active{
+    display: flex;
+    height: 100%;
+  }
+
+  .nav-list img{
+    max-width: 150px;
+  }
+
+  .nav-list li:nth-child(2) img{
+    max-width: 40px;
+  }
+
+  .nav-list li{
+    margin: 20px 0px;
+    padding: 0px;
+  }
+  
+  .nav-list li:first-child, .nav-list li:last-child{
+    border-left: none;
+    padding-left: 0px;
+  }
+
+  .profile-img{
+    width: 40px;
+  }
+
+  .post:last-child{
+    margin-bottom: 0px;
+  }
+}

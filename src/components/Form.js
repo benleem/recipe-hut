@@ -1,6 +1,7 @@
-import React, { useRef, useState, useEffect} from 'react'
+import React, { useRef, useState, useEffect} from 'react';
 import axios from 'axios';
-import Ingredient from './Ingredient'
+import Ingredient from './Ingredient';
+import './form.css';
 
 const Form = ({ setLoading, setActive, editObject, editId, setEditMode, editMode, fetchData, user}) => {
     const [ingredients, setIngredients] = useState([]);
@@ -74,8 +75,8 @@ const Form = ({ setLoading, setActive, editObject, editId, setEditMode, editMode
             }
             else if (editMode === false){
                 await axios.post('/.netlify/functions/add', {
-                    username: user.user_metadata.full_name,
-                    userId: user.id,
+                    username: user.nickname,
+                    userId: user.sub,
                     title: form.title.value,
                     ingredients: ingredients,
                     description: form.description.value,
